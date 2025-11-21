@@ -56,10 +56,10 @@ function openMap(location) {
 // Función para confirmar asistencia
 function confirmAttendance() {
     // URL del formulario de confirmación (reemplaza con tu link real)
-    const rsvpUrl = 'TU_URL_DE_FORMULARIO_AQUI';
+    const rsvpUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeXAtmrPhz34L9aIOTKwc6ytNcOL_hCAIxEI2M86CaZsU8m8A/viewform';
     
     // Abrir el formulario en una nueva ventana
-    if (rsvpUrl && rsvpUrl !== 'TU_URL_DE_FORMULARIO_AQUI') {
+    if (rsvpUrl && rsvpUrl !== 'https://forms.gle/gHjxAG4EEjA4ubpA8https://docs.google.com/forms/d/e/1FAIpQLSeXAtmrPhz34L9aIOTKwc6ytNcOL_hCAIxEI2M86CaZsU8m8A/viewform') {
         window.open(rsvpUrl, '_blank');
     } else {
         // Mensaje temporal mientras se configura el link
