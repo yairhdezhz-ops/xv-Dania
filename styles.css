@@ -528,11 +528,11 @@ body {
 
 .godparents-label {
     font-family: var(--font-script);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--dark-gray);
     text-align: center;
     font-weight: 500;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     margin-top: 3rem;
     /* Fuente script/elegante para "Mis padrinos" */
 }
@@ -970,8 +970,8 @@ body {
     }
 
     .godparents-label {
-        font-size: 1.8rem;
-        margin-bottom: 3.5rem;
+        font-size: 2.1rem;
+        margin-bottom: 1.2rem;
         margin-top: 3.5rem;
     }
 
@@ -1226,8 +1226,8 @@ body {
     }
 
     .godparents-label {
-        font-size: 2rem;
-        margin-bottom: 4rem;
+        font-size: 2.3rem;
+        margin-bottom: 1.3rem;
         margin-top: 4rem;
     }
 
@@ -1475,8 +1475,8 @@ body {
     }
 
     .godparents-label {
-        font-size: 2.3rem;
-        margin-bottom: 4.5rem;
+        font-size: 2.6rem;
+        margin-bottom: 1.4rem;
         margin-top: 4.5rem;
     }
 
@@ -1630,7 +1630,8 @@ body {
     }
 
     .godparents-label {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
     }
 
     .details-title {
@@ -1653,7 +1654,10 @@ body {
     }
 
     .gift-highlight {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        display: block;
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .countdown-number {
@@ -1856,8 +1860,8 @@ body {
     }
 
     .godparents-label {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
+        font-size: 1.3rem;
+        margin-bottom: 0.9rem;
         margin-top: 2rem;
     }
 
@@ -1911,9 +1915,10 @@ body {
     }
 
     .gift-highlight {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-        margin-top: 1rem;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        margin-top: 0.5rem;
+        display: block;
     }
 
     .rsvp-prompt {
