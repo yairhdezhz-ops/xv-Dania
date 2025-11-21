@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dania - Mis XV Años</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fuentes de Google (mantenidas como fallback si las fuentes personalizadas no están disponibles) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header-section">
+        <!-- Manchas decorativas -->
+        <img src="assets/vectors/mancha.svg" alt="Mancha decorativa" class="header-watercolor header-watercolor-top-right" />
+        <img src="assets/vectors/mancha.svg" alt="Mancha decorativa" class="header-watercolor header-watercolor-bottom-left" />
+        
+        <div class="header-container">
+            <!-- Arreglo floral - se posiciona en la parte superior izquierda del marco -->
+            <img src="assets/images/floral-bouquet.png" alt="Arreglo floral" class="floral-bouquet" />
+            
+            <!-- Marco dorado como imagen/vector -->
+            <div class="gold-frame-wrapper">
+                <img src="assets/vectors/gold-frame.svg" alt="Marco dorado" class="gold-frame-image" />
+                <div class="frame-content">
+                    <h1 class="name">Dania</h1>
+                    <p class="event-type">XV años</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Date and Time Section -->
+    <section class="date-section">
+        <!-- Mancha decorativa en medio del lado derecho -->
+        <img src="assets/vectors/mancha.svg" alt="Mancha decorativa" class="section-watercolor section-watercolor-right-center" />
+        <img src="assets/vectors/Brillos.svg" alt="Brillos" class="brillos-svg brillos-svg-right-center-5" />
+        
+        <p class="month">DICIEMBRE</p>
+        <div class="date-container">
+            <span class="day">SÁBADO</span>
+            <div class="date-line">
+                <span class="date-number">27</span>
+            </div>
+            <span class="time">17:00 H</span>
+        </div>
+        <p class="year">2025</p>
+    </section>
+
+    <!-- First Content Box - Parents & Godparents -->
+    <section class="content-box parents-section">
+        <!-- Arreglo floral en la parte superior -->
+        <img src="assets/images/floral-decoration-2.png" alt="Arreglo floral decorativo" class="floral-decoration-top-box" />
+        
+        <!-- Marco dorado -->
+        <div class="content-frame-wrapper">
+            <img src="assets/vectors/content-frame.svg" alt="Marco dorado" class="content-frame-image" />
+            
+            <!-- Contenido dentro del marco -->
+            <div class="content-frame-inner">
+                <p class="intro-message">
+                    Existen momentos en la vida que imaginamos, soñamos y esperamos, uno de esos momentos ha llegado: mis 15 años. Gracias a Dios, mi familia y a mis padres...
+                </p>
+                <p class="parents-name">Yuridia Cota Orduño</p>
+                <p class="parents-name">Hector Daniel Carrazco Cota</p>
+                <p class="godparents-label">Mis padrinos</p>
+                <p class="godparents-name">Libia Irela Cota Orduño</p>
+                <p class="godparents-name">Marco Antonio Parra Cota</p>
+            </div>
+        </div>
+        <!-- Mancha decorativa entre secciones, lado izquierdo -->
+        <img src="assets/vectors/mancha.svg" alt="Mancha decorativa" class="section-watercolor section-watercolor-left-between" />
+        <img src="assets/vectors/Brillos.svg" alt="Brillos" class="brillos-svg brillos-svg-left-between-4" />
+    </section>
+
+    <!-- Second Content Box - Event Details -->
+    <section class="content-box details-section">
+        <!-- Arreglo floral en la parte superior -->
+        <img src="assets/images/flor-3.png" alt="Arreglo floral decorativo 2" class="floral-decoration-top-box-2" />
+        
+        <!-- Marco dorado -->
+        <div class="content-frame-wrapper">
+            <img src="assets/vectors/content-frame.svg" alt="Marco dorado" class="content-frame-image" />
+            
+            <!-- Contenido dentro del marco -->
+            <div class="content-frame-inner">
+                <h2 class="details-title">DETALLES</h2>
+                
+                <!-- Ceremony Section -->
+                <div class="event-detail">
+                    <h3 class="event-title">Ceremonia Religiosa</h3>
+                    <p class="event-time">17:00 hrs</p>
+                    <p class="event-location">Parroquia Nuestra Señora de Guadalupe</p>
+                    <p class="event-address">Juan José Ríos, Sin.</p>
+                    <button class="map-button" onclick="openMap('ceremony')">VER MAPA</button>
+                </div>
+
+                <!-- Reception Section -->
+                <div class="event-detail">
+                    <h3 class="event-title">Recepción</h3>
+                    <p class="event-time">19:00 hrs</p>
+                    <p class="event-location">Salón Viñedos</p>
+                    <p class="event-address">Los Mochis, Sin.</p>
+                    <button class="map-button" onclick="openMap('reception')">VER MAPA</button>
+                </div>
+            </div>
+        </div>
+        <!-- Mancha decorativa entre secciones, lado derecho -->
+        <img src="assets/vectors/mancha.svg" alt="Mancha decorativa" class="section-watercolor section-watercolor-right-between" />
+        <img src="assets/vectors/Brillos.svg" alt="Brillos" class="brillos-svg brillos-svg-left-between-3" />
+    </section>
+
+    <!-- Third Content Box - Gifts & RSVP -->
+    <section class="content-box gifts-section">
+        <!-- Arreglo floral en la parte superior -->
+        <img src="assets/images/floral-decoration-2.png" alt="Arreglo floral decorativo" class="floral-decoration-top-box" />
+        
+        <!-- Marco dorado -->
+        <div class="content-frame-wrapper">
+            <img src="assets/vectors/content-frame.svg" alt="Marco dorado" class="content-frame-image" />
+            
+            <!-- Contenido dentro del marco -->
+            <div class="content-frame-inner">
+                <!-- Icono de sobre SVG -->
+                <img src="assets/vectors/envelope-icon.svg" alt="Icono de sobre" class="envelope-icon-svg" />
+                
+                <p class="gift-message">
+                    Tu presencia es lo más importante para mí, pero si deseas tener un detalle, tendremos <span class="gift-highlight">Lluvia de sobres</span>
+                </p>
+                
+                <p class="rsvp-prompt">Por favor confirma tu asistencia aquí:</p>
+                <button class="rsvp-button" onclick="confirmAttendance()">CONFIRMAR</button>
+            </div>
+        </div>
+        <!-- Mancha decorativa entre secciones, lado izquierdo (entre gifts y countdown) -->
+        <img src="assets/vectors/mancha.svg" alt="Mancha decorativa" class="section-watercolor section-watercolor-left-between-2" />
+        <img src="assets/vectors/Brillos.svg" alt="Brillos" class="brillos-svg brillos-svg-left-between-2" />
+    </section>
+
+    <!-- Bottom Section - Countdown -->
+    <section class="content-box countdown-section">
+        <!-- Arreglo floral en la parte superior -->
+        <img src="assets/images/flor-3.png" alt="Arreglo floral decorativo 2" class="floral-decoration-top-box-2" />
+        
+        <!-- Marco dorado pequeño -->
+        <div class="countdown-frame-wrapper">
+            <img src="assets/vectors/cuadro-chico.svg" alt="Marco decorativo" class="countdown-frame-image" />
+            
+            <!-- Contenido dentro del marco -->
+            <div class="countdown-frame-inner">
+                <p class="closing-message">¡Te espero!</p>
+                <div class="countdown-container">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">DÍAS</span>
+                    </div>
+                    <div class="countdown-separator"></div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">HRS</span>
+                    </div>
+                    <div class="countdown-separator"></div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">MIN</span>
+                    </div>
+                    <div class="countdown-separator"></div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">SEG</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <p class="footer-text">Por Yair y Kenia</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

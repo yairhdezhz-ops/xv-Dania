@@ -1,0 +1,1750 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    /* Degradado crema suave que combina con los elementos pastel y dorado */
+    background: white;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+:root {
+    --gold: #D4AF37;
+    --light-gold: #E8D5A3;
+    --purple: #B8A5E0;
+    --light-purple: #e9d5ed;
+    --pink: #F4C2C2;
+    --light-pink: #F8D7DA;
+    --green: #A8D5BA;
+    --light-green: #C8E6D1;
+    --gray: #6C757D;
+    --light-gray: #ADB5BD;
+    --dark-gray: #343A40;
+    --white: #FFFFFF;
+    
+    /* Variables de fuentes personalizadas */
+    --font-script: 'ScriptFont', 'Playfair Display', serif;
+    --font-subtitle: 'SubtitleFont', 'Poppins', sans-serif;
+    --font-body: 'BodyFont', 'Poppins', sans-serif;
+    --font-heading: 'HeadingFont', 'Playfair Display', serif;
+}
+
+/* ============================================
+   FUENTES PERSONALIZADAS
+   ============================================
+   Reemplaza las rutas con tus archivos de fuentes.
+   Soporta: .woff2, .woff, .ttf, .otf
+   ============================================ */
+
+/* Fuente Script - Para el nombre "Dania" */
+@font-face {
+    font-family: 'ScriptFont';
+    src: url('assets/fonts/script-font.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Fuente Subtitle - Para "XV años" */
+@font-face {
+    font-family: 'SubtitleFont';
+    src: url('assets/fonts/subtitle-font.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Fuente Body - Para texto general */
+@font-face {
+    font-family: 'BodyFont';
+    src: url('assets/fonts/body-font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Fuente Heading - Para títulos y nombres */
+@font-face {
+    font-family: 'HeadingFont';
+    src: url('assets/fonts/heading-font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* Header Section */
+.header-section {
+    text-align: center;
+    padding: 7rem 1rem 1rem;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 400px;
+    overflow: visible;
+    width: 100%;
+}
+
+/* Manchas decorativas en el header */
+.header-watercolor {
+    position: absolute;
+    width: 250px;
+    height: auto;
+    opacity: 0.4;
+    z-index: 0;
+    pointer-events: none;
+    object-fit: contain;
+}
+
+/* Mancha arriba a la derecha, pegada al borde */
+.header-watercolor-top-right {
+    top: 0;
+    right: 0;
+    transform: translate(30%, 0%);
+}
+
+/* Mancha abajo a la izquierda, pegada al borde */
+.header-watercolor-bottom-left {
+    left: 0;
+    transform: translate(-30%, 70%);
+}
+
+/* Fallback si las manchas no están disponibles */
+.header-watercolor:not([src]),
+.header-watercolor[src=""],
+.header-watercolor[src*="undefined"] {
+    display: none;
+}
+
+.header-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+/* Arreglo floral - posicionado en la parte superior izquierda del marco */
+.floral-bouquet {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 230px;
+    height: auto;
+    z-index: 3;
+    object-fit: contain;
+    pointer-events: none;
+    /* Ajusta estos valores según el tamaño real de tu imagen */
+}
+
+/* Fallback si la imagen floral no está disponible */
+.floral-bouquet:not([src]),
+.floral-bouquet[src=""],
+.floral-bouquet[src*="undefined"] {
+    display: none;
+}
+
+/* Contenedor del marco dorado */
+.gold-frame-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+/* Imagen/vector del marco dorado */
+.gold-frame-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    min-height: 300px;
+}
+
+/* Fallback visual si la imagen no carga */
+.gold-frame-image::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--gold);
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--light-gold) 0%, var(--gold) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Contenido dentro del marco (nombre y texto) */
+.frame-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+    z-index: 4;
+}
+
+.name {
+    font-family: var(--font-script);
+    font-size: 4rem;
+    font-weight: 300;
+    color: #1a1a1a;
+    padding-top: 2rem;
+    margin: 0;
+    margin-bottom: -1rem;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+    line-height: 1.1;
+    /* Estilo de script/cursiva - ajusta según la fuente que uses */
+    font-style: normal;
+}
+
+.event-type {
+    font-family: var(--font-subtitle);
+    font-size: 3rem;
+    color: var(--light-purple);
+    margin-top: -1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    /* Ajusta el color púrpura claro según tu diseño */
+    color: #B8A5E0;
+}
+
+/* Date Section */
+.date-section {
+    text-align: center;
+    padding: 7rem 3rem;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    overflow: visible;
+    width: 100%;
+}
+
+.month {
+    font-family: var(--font-body);
+    font-size: 1.7rem;
+    color: var(--dark-gray);
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.date-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 0rem 0;
+    position: relative;
+    flex-wrap: nowrap;
+}
+
+.day, .time {
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    font-weight: 300;
+    letter-spacing: 1px;
+    position: relative;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+    flex: 0 0 auto;
+}
+
+/* Líneas decorativas doradas arriba de SÁBADO y 17:00H */
+.day::before,
+.time::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: .5px;
+    background: var(--dark-gray);
+    width: 100%;
+}
+
+/* Líneas decorativas doradas debajo de SÁBADO y 17:00H */
+.day::after,
+.time::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: .5px;
+    background: var(--dark-gray);
+    width: 100%;
+}
+
+.date-line {
+    position: relative;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.date-number {
+    font-family: var(--font-heading);
+    font-size: 6rem;
+    font-weight: 400;
+    color: var(--dark-gray);
+    display: block;
+    line-height: 1;
+    /* Fuente elegante/script para el número */
+    font-style: normal;
+}
+
+.year {
+    font-size: 1.7rem;
+    color: var(--dark-gray);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Content Boxes */
+.content-box {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    position: relative;
+}
+
+/* Sección de Padres y Padrinos - Estilos específicos */
+.parents-section {
+    position: relative;
+    padding: 0 1rem;
+    margin: 3rem auto;
+    overflow: visible;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Manchas decorativas en las secciones */
+.section-watercolor {
+    position: absolute;
+    width: 400px;
+    height: auto;
+    opacity: 0.35;
+    z-index: 0;
+    pointer-events: none;
+    object-fit: contain;
+}
+
+/* Mancha en medio del lado derecho (para date-section) */
+.section-watercolor-right-center {
+    top: 50%;
+    right: 0;
+    transform: translate(60%, 0%);
+}
+
+/* Mancha entre secciones, lado izquierdo (entre parents y details) */
+.section-watercolor-left-between {
+    bottom: 50px;
+    left: 0;
+    transform: translate(-60%, 60%);
+}
+
+/* Mancha entre secciones, lado derecho (entre details y gifts) */
+.section-watercolor-right-between {
+    bottom: -50px;
+    right: 0;
+    transform: translate(60%, 50%);
+}
+
+/* Mancha entre secciones, lado izquierdo (entre details y countdown) */
+.section-watercolor-left-between-2 {
+    bottom: 50px;
+    left: 0;
+    transform: translate(-60%, 70%);
+}
+
+/* Fallback si las manchas no están disponibles */
+.section-watercolor:not([src]),
+.section-watercolor[src=""],
+.section-watercolor[src*="undefined"] {
+    display: none;
+}
+
+/* Brillos decorativos en las secciones */
+.brillos-svg {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    z-index: 5;
+    pointer-events: none;
+    object-fit: contain;
+    opacity: .5;
+    display: block;
+}
+
+/* Brillos en medio del lado derecho (para date-section) */
+.brillos-svg-right-center-5 {
+    top: 0%;
+    right: 0;
+    transform: translate(-220%, 130%);
+}
+
+/* Brillos entre secciones, lado izquierdo (entre parents y details) */
+.brillos-svg-left-between-4 {
+    bottom: 0px;
+    left: 0;
+    transform: translate(210%, 50%);
+}
+
+/* Brillos entre secciones, lado derecho (entre details y gifts) */
+.brillos-svg-left-between-3 {
+    bottom: 0px;
+    left: 0;
+    transform: translate(-40%, 50%);
+}
+
+/* Brillos entre secciones, lado izquierdo (entre gifts y countdown) */
+.brillos-svg-left-between-2 {
+    bottom: 0px;
+    left: 0;
+    transform: translate(210%, 50%);
+}
+
+/* Fallback si las manchas no están disponibles */
+.brillos-svg:not([src]),
+.brillos-svg[src=""],
+.brillos-svg[src*="undefined"] {
+    display: none;
+}
+
+/* Arreglo floral en la parte superior */
+.floral-decoration-top-box {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    z-index: 2;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* Fallback si la imagen floral no está disponible */
+.floral-decoration-top-box:not([src]),
+.floral-decoration-top-box[src=""],
+.floral-decoration-top-box[src*="undefined"] {
+    display: none;
+}
+
+/* Contenedor del marco dorado */
+.content-frame-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    z-index: 1;
+    padding-top: 60px;
+}
+
+/* Imagen/vector del marco dorado */
+.content-frame-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Contenido dentro del marco */
+.content-frame-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 450px;
+    align-items: center;
+    z-index: 3;
+    text-align: center;
+}
+
+.intro-message {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    line-height: 1.5;
+    text-align: center;
+    /* Centrado como en la imagen */
+}
+
+.parents-name {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    margin-bottom: 0.3rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Si hay múltiples nombres de padres, el último tiene más margen antes de "Mis padrinos" */
+.parents-name:last-of-type {
+    margin-bottom: 1.5rem;
+}
+
+.godparents-name {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    margin-bottom: 0.3rem;
+    text-align: center;
+    font-weight: 400;
+}
+
+/* Si hay múltiples nombres de padrinos, el último no tiene margen inferior */
+.godparents-name:last-of-type {
+    margin-bottom: 1.5rem;
+}
+
+.godparents-label {
+    font-family: var(--font-script);
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    /* Fuente script/elegante para "Mis padrinos" */
+}
+
+/* Estilos específicos para la sección de detalles */
+.details-section {
+    position: relative;
+    padding: 0 1rem;
+    margin: 3rem auto;
+    overflow: visible;
+    width: 100%;
+    max-width: 600px;
+}
+
+.floral-decoration-top-box-2 {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    z-index: 2;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.details-title {
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    color: var(--dark-gray);
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    margin-top: 4rem;
+    text-transform: uppercase;
+}
+
+.event-detail {
+    margin-bottom: 2.5rem;
+}
+
+.event-detail:last-child {
+    margin-bottom: 0;
+}
+
+.event-title {
+    font-family: var(--font-script);
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    margin-bottom: 0.8rem;
+    text-align: center;
+    font-weight: 400;
+    /* Fuente script/elegante como en la imagen */
+}
+
+.event-time {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-weight: 400;
+}
+
+.event-location {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    margin-bottom: 0.3rem;
+    text-align: center;
+    font-weight: 400;
+}
+
+.event-address {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 400;
+}
+
+.map-button {
+    display: block;
+    width: 100%;
+    max-width: 180px;
+    margin: 0 auto;
+    padding: 0.8rem 1.5rem;
+    background: var(--light-purple);
+    color: var(--dark-gray);
+    border: none;
+    border-radius: 25px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: .8rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.map-button:hover {
+    background: var(--purple);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(155, 126, 222, 0.3);
+}
+
+/* Estilos específicos para la sección de Gifts & RSVP */
+.gifts-section {
+    position: relative;
+    padding: 0 1rem;
+    margin: 3rem auto;
+    overflow: visible;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Icono de sobre SVG */
+.envelope-icon-svg {
+    width: 80px;
+    height: auto;
+    margin: 0 auto 1.5rem;
+    display: block;
+    object-fit: contain;
+}
+
+/* Fallback si el icono no está disponible */
+.envelope-icon-svg:not([src]),
+.envelope-icon-svg[src=""],
+.envelope-icon-svg[src*="undefined"] {
+    display: none;
+}
+
+.gift-message {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* "Lluvia de sobres" en fuente script/elegante */
+.gift-highlight {
+    font-family: var(--font-script);
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+    margin-top: 1.5rem;
+    color: var(--dark-gray);
+    font-weight: 400;
+    display: inline-block;
+}
+
+.rsvp-prompt {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.rsvp-button {
+    display: block;
+    width: 100%;
+    max-width: 180px;
+    margin: 0 auto;
+    padding: 0.8rem 1.5rem;
+    background: var(--light-purple);
+    color: var(--dark-gray);
+    border: none;
+    border-radius: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rsvp-button:hover {
+    background: var(--purple);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(155, 126, 222, 0.3);
+}
+
+/* Countdown Section */
+.countdown-section {
+    position: relative;
+    padding: 0 1rem;
+    margin: 3rem auto;
+    overflow: visible;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Contenedor del marco pequeño */
+.countdown-frame-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    z-index: 1;
+    padding-top: 50px;
+}
+
+/* Imagen/vector del marco pequeño */
+.countdown-frame-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Contenido dentro del marco del contador */
+.countdown-frame-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    text-align: center;
+}
+
+.closing-message {
+    font-family: var(--font-script);
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+    /* Fuente script/elegante como en la imagen */
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+}
+
+.countdown-number {
+    font-family: var(--font-body);
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--dark-gray);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+}
+
+.countdown-label {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.countdown-separator {
+    width: 1px;
+    height: 70px;
+    background: var(--light-gray);
+    opacity: 0.4;
+    margin: 0 0.3rem;
+}
+
+/* Responsive Design - Tablet */
+@media (min-width: 768px) {
+    .header-section {
+        padding: 3rem 2rem 2rem;
+        min-height: 500px;
+    }
+
+    .header-watercolor {
+        width: 320px;
+    }
+
+    .header-container {
+        max-width: 600px;
+    }
+
+    .gold-frame-wrapper {
+        max-width: 450px;
+    }
+
+    .gold-frame-image {
+        min-height: 380px;
+    }
+
+    .floral-bouquet {
+        width: 280px;
+        top: -20px; /* Mantener posición original de móvil */
+        left: -40px;
+    }
+
+    /* Manchas decorativas - más grandes */
+    .section-watercolor {
+        width: 500px;
+    }
+
+    /* Brillos - mover a esquinas y aumentar tamaño */
+    .brillos-svg {
+        width: 180px;
+    }
+
+    /* Brillos en esquina superior derecha (date-section) */
+    .brillos-svg-right-center-5 {
+        top: 0;
+        right: 0;
+        transform: translate(-10%, 10%);
+    }
+
+    /* Brillos en esquina inferior izquierda (parents-section) */
+    .brillos-svg-left-between-4 {
+        bottom: 0;
+        left: 0;
+        transform: translate(10%, 10%);
+    }
+
+    /* Brillos en esquina inferior derecha (details-section) */
+    .brillos-svg-left-between-3 {
+        bottom: 0;
+        right: 0;
+        left: auto;
+        transform: translate(-10%, 10%);
+    }
+
+    /* Brillos en esquina inferior izquierda (gifts-section) */
+    .brillos-svg-left-between-2 {
+        bottom: 0;
+        left: 0;
+        transform: translate(10%, 10%);
+    }
+
+    /* Arreglos florales - más grandes, manteniendo posición original */
+    .floral-decoration-top-box {
+        max-width: 400px;
+        top: 20px; /* Mantener posición original de móvil */
+    }
+
+    .floral-decoration-top-box-2 {
+        max-width: 400px;
+        top: -80px; /* Subir un poco para centrar en el inicio del contenedor */
+    }
+
+    /* Icono de sobre - más grande */
+    .envelope-icon-svg {
+        width: 90px;
+    }
+
+    .name {
+        font-size: 5rem;
+    }
+
+    .event-type {
+        font-size: 3rem;
+    }
+
+    .date-section {
+        padding: 2.5rem 2rem;
+    }
+
+    .month {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+
+    .date-number {
+        font-size: 5rem;
+    }
+
+    .day, .time {
+        font-size: 1.8rem;
+    }
+
+    .year {
+        font-size: 2rem;
+    }
+
+    .content-box {
+        margin: 3rem auto;
+        padding: 0 2rem;
+    }
+
+    .parents-section {
+        margin: 4rem auto;
+    }
+
+
+    .content-frame-wrapper {
+        max-width: 600px;
+        padding-top: 70px;
+    }
+
+    .content-frame-inner {
+        width: 85%;
+        max-width: 500px;
+        padding: 2.5rem 2rem;
+    }
+
+    .intro-message {
+        font-size: 1.4rem;
+        margin-bottom: 3.5rem;
+        margin-top: 3.5rem;
+        line-height: 1.6;
+    }
+
+    .parents-name,
+    .godparents-name {
+        font-size: 1.4rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .godparents-label {
+        font-size: 1.8rem;
+        margin-bottom: 3.5rem;
+        margin-top: 3.5rem;
+    }
+
+    .details-title {
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+        margin-top: 4.5rem;
+        letter-spacing: 4px;
+    }
+
+    .event-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .event-time {
+        font-size: 1.7rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .event-location {
+        font-size: 1.4rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .event-address {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+    }
+
+    .gift-message {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    .gift-highlight {
+        font-size: 1.8rem;
+        margin-bottom: 3rem;
+        margin-top: 1.5rem;
+    }
+
+    .rsvp-prompt {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+    }
+
+    .map-button,
+    .rsvp-button {
+        max-width: 200px;
+        padding: 1rem 1.8rem;
+        font-size: 0.9rem;
+    }
+
+    .box-content {
+        padding: 3rem 2.5rem 2rem;
+    }
+
+    .countdown-section {
+        max-width: 600px;
+        margin: 4rem auto;
+    }
+
+    .countdown-frame-wrapper {
+        max-width: 550px;
+        padding-top: 60px;
+    }
+
+    .countdown-frame-inner {
+        width: 90%;
+        max-width: 450px;
+    }
+
+    .closing-message {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+        margin-top: 3.5rem;
+    }
+
+    .countdown-number {
+        font-size: 3.2rem;
+    }
+
+    .countdown-label {
+        font-size: 1rem;
+    }
+
+    .countdown-separator {
+        height: 60px;
+    }
+}
+
+/* Responsive Design - Desktop / Laptop */
+@media (min-width: 1024px) {
+    body {
+        padding: 2rem 0;
+    }
+
+    .header-section {
+        max-width: 800px;
+        padding: 4rem 2rem 2rem;
+        min-height: 600px;
+    }
+
+    .header-container {
+        max-width: 700px;
+    }
+
+    .gold-frame-wrapper {
+        max-width: 550px;
+    }
+
+    .gold-frame-image {
+        min-height: 450px;
+    }
+
+    .header-watercolor {
+        width: 400px;
+    }
+
+    .floral-bouquet {
+        width: 350px;
+        top: -20px; /* Mantener posición original de móvil */
+        left: -50px;
+    }
+
+    /* Manchas decorativas - aún más grandes */
+    .section-watercolor {
+        width: 600px;
+    }
+
+    /* Brillos - más grandes y en esquinas */
+    .brillos-svg {
+        width: 220px;
+    }
+
+    /* Brillos en esquina superior derecha (date-section) */
+    .brillos-svg-right-center-5 {
+        top: 0;
+        right: 0;
+        transform: translate(-5%, 5%);
+    }
+
+    /* Brillos en esquina inferior izquierda (parents-section) */
+    .brillos-svg-left-between-4 {
+        bottom: 0;
+        left: 0;
+        transform: translate(5%, 5%);
+    }
+
+    /* Brillos en esquina inferior derecha (details-section) */
+    .brillos-svg-left-between-3 {
+        bottom: 0;
+        right: 0;
+        left: auto;
+        transform: translate(-5%, 5%);
+    }
+
+    /* Brillos en esquina inferior izquierda (gifts-section) */
+    .brillos-svg-left-between-2 {
+        bottom: 0;
+        left: 0;
+        transform: translate(5%, 5%);
+    }
+
+    /* Arreglos florales - más grandes, manteniendo posición original */
+    .floral-decoration-top-box {
+        max-width: 500px;
+        top: 20px; /* Mantener posición original de móvil */
+    }
+
+    .floral-decoration-top-box-2 {
+        max-width: 500px;
+        top: -90px; /* Subir un poco para centrar en el inicio del contenedor */
+    }
+
+    /* Icono de sobre - más grande */
+    .envelope-icon-svg {
+        width: 100px;
+    }
+
+    .name {
+        font-size: 6.5rem;
+    }
+
+    .event-type {
+        font-size: 3.8rem;
+    }
+
+    .date-section {
+        max-width: 800px;
+        padding: 3rem 2rem;
+    }
+
+    .month {
+        font-size: 2.2rem;
+        letter-spacing: 5px;
+    }
+
+    .date-number {
+        font-size: 6.5rem;
+    }
+
+    .day, .time {
+        font-size: 2rem;
+    }
+
+    .year {
+        font-size: 2.2rem;
+    }
+
+    .content-box {
+        max-width: 800px;
+        margin: 3rem auto;
+    }
+
+    .parents-section,
+    .details-section,
+    .gifts-section,
+    .countdown-section {
+        max-width: 700px;
+        margin: 4rem auto;
+    }
+
+    .floral-decoration-top-box {
+        max-width: 700px;
+        top: 20px; /* Mantener posición original de móvil */
+    }
+
+    .content-frame-wrapper {
+        max-width: 700px;
+        padding-top: 80px;
+    }
+
+    .content-frame-inner {
+        width: 85%;
+        max-width: 550px;
+        padding: 3rem 2.5rem;
+    }
+
+    .intro-message {
+        font-size: 1.5rem;
+        margin-bottom: 4rem;
+        margin-top: 4rem;
+        line-height: 1.7;
+    }
+
+    .parents-name,
+    .godparents-name {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .godparents-label {
+        font-size: 2rem;
+        margin-bottom: 4rem;
+        margin-top: 4rem;
+    }
+
+    .details-title {
+        font-size: 1.6rem;
+        margin-bottom: 3.5rem;
+        margin-top: 5rem;
+        letter-spacing: 5px;
+    }
+
+    .event-title {
+        font-size: 2.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .event-time {
+        font-size: 1.9rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .event-location {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .event-address {
+        font-size: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .gift-message {
+        font-size: 1.5rem;
+        margin-bottom: 2.5rem;
+        line-height: 1.7;
+    }
+
+    .gift-highlight {
+        font-size: 2rem;
+        margin-bottom: 3.5rem;
+        margin-top: 2rem;
+    }
+
+    .rsvp-prompt {
+        font-size: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .envelope-icon-svg {
+        width: 90px;
+        margin-bottom: 2.5rem;
+    }
+
+    .box-content {
+        padding: 3.5rem 3rem 2.5rem;
+    }
+
+    .countdown-section {
+        max-width: 700px;
+        margin: 4rem auto;
+    }
+
+    .countdown-frame-wrapper {
+        max-width: 650px;
+        padding-top: 70px;
+    }
+
+    .countdown-frame-inner {
+        width: 90%;
+        max-width: 550px;
+    }
+
+    .closing-message {
+        font-size: 2.3rem;
+        margin-bottom: 3rem;
+        margin-top: 4rem;
+    }
+
+    .countdown-number {
+        font-size: 3.8rem;
+    }
+
+    .countdown-label {
+        font-size: 1.1rem;
+    }
+
+    .countdown-separator {
+        height: 70px;
+    }
+
+    .map-button,
+    .rsvp-button {
+        max-width: 280px;
+        padding: 1.1rem 2.2rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Responsive Design - Large Desktop / Web */
+@media (min-width: 1440px) {
+    .header-section,
+    .date-section,
+    .content-box,
+    .countdown-section {
+        max-width: 1000px;
+    }
+
+    .header-container {
+        max-width: 800px;
+    }
+
+    .gold-frame-wrapper {
+        max-width: 650px;
+    }
+
+    .gold-frame-image {
+        min-height: 550px;
+    }
+
+    .header-watercolor {
+        width: 500px;
+    }
+
+    .floral-bouquet {
+        width: 420px;
+        top: -20px; /* Mantener posición original de móvil */
+        left: -60px;
+    }
+
+    /* Manchas decorativas - tamaño máximo */
+    .section-watercolor {
+        width: 750px;
+    }
+
+    /* Brillos - tamaño máximo y en esquinas perfectas */
+    .brillos-svg {
+        width: 280px;
+    }
+
+    /* Brillos en esquina superior derecha (date-section) */
+    .brillos-svg-right-center-5 {
+        top: 0;
+        right: 0;
+        transform: translate(0%, 0%);
+    }
+
+    /* Brillos en esquina inferior izquierda (parents-section) */
+    .brillos-svg-left-between-4 {
+        bottom: 0;
+        left: 0;
+        transform: translate(0%, 0%);
+    }
+
+    /* Brillos en esquina inferior derecha (details-section) */
+    .brillos-svg-left-between-3 {
+        bottom: 0;
+        right: 0;
+        left: auto;
+        transform: translate(0%, 0%);
+    }
+
+    /* Brillos en esquina inferior izquierda (gifts-section) */
+    .brillos-svg-left-between-2 {
+        bottom: 0;
+        left: 0;
+        transform: translate(0%, 0%);
+    }
+
+    /* Arreglos florales - tamaño máximo, manteniendo posición original */
+    .floral-decoration-top-box {
+        max-width: 650px;
+        top: 20px; /* Mantener posición original de móvil */
+    }
+
+    .floral-decoration-top-box-2 {
+        max-width: 650px;
+        top: -100px; /* Subir un poco para centrar en el inicio del contenedor */
+    }
+
+    /* Icono de sobre - tamaño máximo */
+    .envelope-icon-svg {
+        width: 120px;
+    }
+
+    .name {
+        font-size: 7.5rem;
+    }
+
+    .event-type {
+        font-size: 4.5rem;
+    }
+
+    .date-section {
+        max-width: 1000px;
+    }
+
+    .month {
+        font-size: 2.5rem;
+        letter-spacing: 6px;
+    }
+
+    .date-number {
+        font-size: 7.5rem;
+    }
+
+    .day, .time {
+        font-size: 2.3rem;
+    }
+
+    .year {
+        font-size: 2.5rem;
+    }
+
+    .content-box {
+        max-width: 1000px;
+    }
+
+    .parents-section,
+    .details-section,
+    .gifts-section,
+    .countdown-section {
+        max-width: 900px;
+    }
+
+    .content-frame-wrapper {
+        max-width: 800px;
+        padding-top: 90px;
+    }
+
+    .content-frame-inner {
+        max-width: 650px;
+        padding: 3.5rem 3rem;
+    }
+
+    .intro-message {
+        font-size: 1.7rem;
+        margin-bottom: 4.5rem;
+        margin-top: 4.5rem;
+        line-height: 1.8;
+    }
+
+    .parents-name,
+    .godparents-name {
+        font-size: 1.8rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .godparents-label {
+        font-size: 2.3rem;
+        margin-bottom: 4.5rem;
+        margin-top: 4.5rem;
+    }
+
+    .details-title {
+        font-size: 1.8rem;
+        margin-bottom: 4rem;
+        margin-top: 5.5rem;
+        letter-spacing: 6px;
+    }
+
+    .event-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .event-time {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .event-location {
+        font-size: 1.7rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .event-address {
+        font-size: 1.7rem;
+        margin-bottom: 3rem;
+    }
+
+    .gift-message {
+        font-size: 1.7rem;
+        margin-bottom: 3rem;
+        line-height: 1.8;
+    }
+
+    .gift-highlight {
+        font-size: 2.3rem;
+        margin-bottom: 4rem;
+        margin-top: 2.5rem;
+    }
+
+    .rsvp-prompt {
+        font-size: 1.7rem;
+        margin-bottom: 3rem;
+    }
+
+    .envelope-icon-svg {
+        width: 100px;
+        margin-bottom: 3rem;
+    }
+
+    .countdown-frame-wrapper {
+        max-width: 750px;
+        padding-top: 80px;
+    }
+
+    .countdown-frame-inner {
+        max-width: 650px;
+    }
+
+    .closing-message {
+        font-size: 2.6rem;
+        margin-bottom: 3.5rem;
+        margin-top: 4.5rem;
+    }
+
+    .countdown-number {
+        font-size: 4.5rem;
+    }
+
+    .countdown-label {
+        font-size: 1.3rem;
+    }
+
+    .countdown-separator {
+        height: 80px;
+    }
+
+    .map-button,
+    .rsvp-button {
+        max-width: 300px;
+        padding: 1.2rem 2.5rem;
+        font-size: 1.2rem;
+    }
+}
+
+/* Responsive Design - Small Mobile */
+@media (max-width: 375px) {
+    .header-section {
+        min-height: 350px;
+        padding: 1.5rem 1rem 1rem;
+    }
+
+    .header-watercolor {
+        width: 150px;
+    }
+
+    .header-container {
+        max-width: 280px;
+    }
+
+    .gold-frame-wrapper {
+        max-width: 280px;
+    }
+
+    .floral-bouquet {
+        width: 150px;
+        top: -15px;
+        left: -20px;
+    }
+
+    .name {
+        font-size: 2.8rem;
+    }
+
+    .event-type {
+        font-size: 0.85rem;
+    }
+
+    .date-section {
+        padding: 1.5rem 1rem;
+    }
+
+    .date-container {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .day, .time {
+        font-size: 0.8rem;
+    }
+
+    .date-number {
+        font-size: 3.5rem;
+    }
+
+    .month, .year {
+        font-size: 0.8rem;
+    }
+
+    .box-content {
+        padding: 2rem 1rem 1.5rem;
+    }
+
+    .countdown-section {
+        max-width: 400px;
+        margin: 2rem auto;
+    }
+
+    .countdown-frame-wrapper {
+        max-width: 400px;
+        padding-top: 40px;
+    }
+
+    .countdown-frame-inner {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .closing-message {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .countdown-number {
+        font-size: 1.8rem;
+    }
+
+    .countdown-label {
+        font-size: 0.65rem;
+    }
+
+    .countdown-separator {
+        height: 35px;
+    }
+
+    .countdown-separator {
+        font-size: 1.5rem;
+    }
+}
+
+/* Smooth Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-box,
+.date-section,
+.countdown-section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Print Styles */
+/* Footer */
+.page-footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-text {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--gray);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    opacity: 0.7;
+}
+
+/* Responsive Footer */
+@media (min-width: 768px) {
+    .page-footer {
+        padding: 2.5rem 2rem;
+        margin-top: 4rem;
+    }
+
+    .footer-text {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .page-footer {
+        max-width: 800px;
+        padding: 3rem 2rem;
+        margin-top: 5rem;
+    }
+
+    .footer-text {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .page-footer {
+        max-width: 1000px;
+        padding: 3.5rem 2rem;
+        margin-top: 6rem;
+    }
+
+    .footer-text {
+        font-size: 1.3rem;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+    }
+    
+    .map-button,
+    .rsvp-button {
+        display: none;
+    }
+
+    .page-footer {
+        display: none;
+    }
+}
+
