@@ -1656,8 +1656,9 @@ body {
     .gift-highlight {
         font-size: 0.9rem;
         display: block;
-        margin-top: 0.5rem;
+        margin-top: 0.1rem;
         margin-bottom: 1.5rem;
+        line-height: 1.2;
     }
 
     .countdown-number {
@@ -1917,8 +1918,9 @@ body {
     .gift-highlight {
         font-size: 0.95rem;
         margin-bottom: 1.5rem;
-        margin-top: 0.5rem;
+        margin-top: 0.1rem;
         display: block;
+        line-height: 1.2;
     }
 
     .rsvp-prompt {
