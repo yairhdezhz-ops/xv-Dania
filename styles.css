@@ -52,7 +52,7 @@ body {
 /* Fuente Script - Para el nombre "Dania" */
 @font-face {
     font-family: 'ScriptFont';
-    src: url('assets/fonts/script-font.otf') format('opentype');
+    src: url('assets/fonts/script-font.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -208,12 +208,12 @@ body {
 
 .name {
     font-family: var(--font-script);
-    font-size: 4rem;
+    font-size: 7rem;
     font-weight: 300;
     color: #1a1a1a;
     padding-top: 2rem;
     margin: 0;
-    margin-bottom: -1rem;
+    margin-bottom: -2.5rem;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
     line-height: 1.1;
     /* Estilo de script/cursiva - ajusta según la fuente que uses */
@@ -224,7 +224,7 @@ body {
     font-family: var(--font-subtitle);
     font-size: 3rem;
     color: var(--light-purple);
-    margin-top: -1rem;
+    margin-top: -2.5rem;
     font-weight: 500;
     letter-spacing: 1px;
     /* Ajusta el color púrpura claro según tu diseño */
@@ -907,7 +907,7 @@ body {
     }
 
     .name {
-        font-size: 5rem;
+        font-size: 8rem;
     }
 
     .event-type {
@@ -1154,7 +1154,7 @@ body {
     }
 
     .name {
-        font-size: 6.5rem;
+        font-size: 8rem;
     }
 
     .event-type {
@@ -1412,7 +1412,7 @@ body {
     }
 
     .name {
-        font-size: 7.5rem;
+        font-size: 11rem;
     }
 
     .event-type {
@@ -1564,98 +1564,411 @@ body {
     }
 }
 
-/* Responsive Design - Small Mobile */
-@media (max-width: 375px) {
+/* Responsive Design - Extra Small Mobile (320px y menores) */
+@media (max-width: 320px) {
     .header-section {
-        min-height: 350px;
-        padding: 1.5rem 1rem 1rem;
+        min-height: 280px;
+        padding: 0.8rem 0.3rem 0.3rem;
     }
 
     .header-watercolor {
-        width: 150px;
+        width: 100px;
     }
 
     .header-container {
-        max-width: 280px;
+        max-width: 240px;
     }
 
     .gold-frame-wrapper {
-        max-width: 280px;
+        max-width: 240px;
+    }
+
+    .gold-frame-image {
+        min-height: 200px;
     }
 
     .floral-bouquet {
-        width: 150px;
-        top: -15px;
-        left: -20px;
+        width: 100px;
+        top: -8px;
+        left: -12px;
     }
 
     .name {
-        font-size: 2.8rem;
+        font-size: 5rem;
+        padding-top: 1.2rem;
+        margin-bottom: -1.8rem;
     }
 
     .event-type {
-        font-size: 0.85rem;
-    }
-
-    .date-section {
-        padding: 1.5rem 1rem;
+        font-size: 1.6rem;
+        margin-top: -1.8rem;
     }
 
     .date-container {
-        gap: 1rem;
-        flex-wrap: wrap;
+        gap: 0.5rem;
     }
 
     .day, .time {
-        font-size: 0.8rem;
+        font-size: 0.65rem;
     }
 
     .date-number {
-        font-size: 3.5rem;
+        font-size: 2.5rem;
     }
 
     .month, .year {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 
-    .box-content {
-        padding: 2rem 1rem 1.5rem;
+    .intro-message {
+        font-size: 0.85rem;
     }
 
-    .countdown-section {
-        max-width: 400px;
-        margin: 2rem auto;
+    .parents-name,
+    .godparents-name {
+        font-size: 0.85rem;
     }
 
-    .countdown-frame-wrapper {
-        max-width: 400px;
-        padding-top: 40px;
+    .godparents-label {
+        font-size: 1rem;
     }
 
-    .countdown-frame-inner {
-        width: 90%;
-        max-width: 350px;
+    .details-title {
+        font-size: 0.9rem;
+    }
+
+    .event-title,
+    .event-time {
+        font-size: 1rem;
+    }
+
+    .event-location,
+    .event-address {
+        font-size: 0.85rem;
+    }
+
+    .gift-message,
+    .rsvp-prompt {
+        font-size: 0.85rem;
+    }
+
+    .gift-highlight {
+        font-size: 1rem;
+    }
+
+    .countdown-number {
+        font-size: 1.5rem;
+    }
+
+    .countdown-label {
+        font-size: 0.55rem;
     }
 
     .closing-message {
-        font-size: 1.3rem;
+        font-size: 1rem;
+    }
+
+    .map-button,
+    .rsvp-button {
+        max-width: 130px;
+        padding: 0.5rem 1rem;
+        font-size: 0.65rem;
+    }
+
+    .envelope-icon-svg {
+        width: 50px;
+    }
+}
+
+/* Responsive Design - Small Mobile (375px y menores) */
+@media (max-width: 375px) {
+    .header-section {
+        min-height: 300px;
+        padding: 1rem 0.5rem 0.5rem;
+        max-width: 100%;
+    }
+
+    .header-watercolor {
+        width: 120px;
+        opacity: 0.3;
+    }
+
+    .header-watercolor-top-right {
+        transform: translate(20%, 0%);
+    }
+
+    .header-watercolor-bottom-left {
+        transform: translate(-20%, 60%);
+    }
+
+    .header-container {
+        max-width: 260px;
+    }
+
+    .gold-frame-wrapper {
+        max-width: 260px;
+    }
+
+    .gold-frame-image {
+        min-height: 220px;
+    }
+
+    .floral-bouquet {
+        width: 120px;
+        top: -10px;
+        left: -15px;
+    }
+
+    .frame-content {
+        width: 85%;
+    }
+
+    .name {
+        font-size: 5rem;
+        padding-top: 1.5rem;
+        margin-bottom: -2rem;
+    }
+
+    .event-type {
+        font-size: 1.8rem;
+        margin-top: -2rem;
+    }
+
+    .date-section {
+        padding: 2rem 0.5rem;
+        max-width: 100%;
+    }
+
+    .month {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    .date-container {
+        gap: 0.8rem;
+        flex-wrap: nowrap;
+        margin: 0.5rem 0;
+    }
+
+    .day, .time {
+        font-size: 0.75rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .date-number {
+        font-size: 3rem;
+    }
+
+    .year {
+        font-size: 1rem;
+    }
+
+    .section-watercolor {
+        width: 200px;
+        opacity: 0.25;
+    }
+
+    .section-watercolor-right-center {
+        transform: translate(50%, 0%);
+    }
+
+    .section-watercolor-left-between,
+    .section-watercolor-left-between-2 {
+        transform: translate(-50%, 50%);
+    }
+
+    .section-watercolor-right-between {
+        transform: translate(50%, 40%);
+    }
+
+    .brillos-svg {
+        width: 80px;
+        opacity: 0.4;
+    }
+
+    .brillos-svg-right-center-5 {
+        transform: translate(-180%, 100%);
+    }
+
+    .brillos-svg-left-between-4,
+    .brillos-svg-left-between-2 {
+        transform: translate(150%, 40%);
+    }
+
+    .brillos-svg-left-between-3 {
+        transform: translate(-20%, 40%);
+    }
+
+    .content-box {
+        max-width: 100%;
+        margin: 1.5rem auto;
+        padding: 0 0.5rem;
+    }
+
+    .parents-section,
+    .details-section,
+    .gifts-section {
+        margin: 2rem auto;
+        padding: 0 0.5rem;
+    }
+
+    .floral-decoration-top-box,
+    .floral-decoration-top-box-2 {
+        max-width: 200px;
+        top: 10px;
+    }
+
+    .floral-decoration-top-box-2 {
+        top: -50px;
+    }
+
+    .content-frame-wrapper {
+        max-width: 100%;
+        padding-top: 45px;
+    }
+
+    .content-frame-inner {
+        width: 88%;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .intro-message {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        line-height: 1.4;
+    }
+
+    .parents-name,
+    .godparents-name {
+        font-size: 0.95rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .parents-name:last-of-type {
         margin-bottom: 1rem;
+    }
+
+    .godparents-name:last-of-type {
+        margin-bottom: 1rem;
+    }
+
+    .godparents-label {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+
+    .details-title {
+        font-size: 1rem;
+        margin-bottom: 1.8rem;
+        margin-top: 2.5rem;
+        letter-spacing: 2px;
+    }
+
+    .event-detail {
+        margin-bottom: 2rem;
+    }
+
+    .event-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .event-time {
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .event-location {
+        font-size: 0.95rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .event-address {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+
+    .map-button,
+    .rsvp-button {
+        max-width: 150px;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.7rem;
+    }
+
+    .envelope-icon-svg {
+        width: 60px;
+        margin-bottom: 1rem;
+    }
+
+    .gift-message {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+    }
+
+    .gift-highlight {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+    }
+
+    .rsvp-prompt {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+
+    .countdown-section {
+        max-width: 100%;
+        margin: 2rem auto;
+        padding: 0 0.5rem;
+    }
+
+    .countdown-frame-wrapper {
+        max-width: 100%;
+        padding-top: 35px;
+    }
+
+    .countdown-frame-inner {
+        width: 88%;
+        max-width: 100%;
+    }
+
+    .closing-message {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+    }
+
+    .countdown-container {
+        gap: 0.3rem;
     }
 
     .countdown-number {
         font-size: 1.8rem;
+        margin-bottom: 0.2rem;
     }
 
     .countdown-label {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
+        letter-spacing: 0.3px;
     }
 
     .countdown-separator {
-        height: 35px;
+        height: 30px;
+        margin: 0 0.2rem;
     }
 
-    .countdown-separator {
-        font-size: 1.5rem;
+    .page-footer {
+        padding: 1.5rem 0.5rem;
+        margin-top: 2rem;
+    }
+
+    .footer-text {
+        font-size: 0.85rem;
     }
 }
 
