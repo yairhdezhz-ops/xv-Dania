@@ -582,7 +582,7 @@ body {
 
 .event-title {
     font-family: var(--font-script);
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--dark-gray);
     margin-bottom: 0.8rem;
     text-align: center;
@@ -982,7 +982,7 @@ body {
     }
 
     .event-title {
-        font-size: 1.8rem;
+        font-size: 2.3rem;
         margin-bottom: 1rem;
     }
 
@@ -1238,7 +1238,7 @@ body {
     }
 
     .event-title {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
         margin-bottom: 1.2rem;
     }
 
@@ -1487,7 +1487,7 @@ body {
     }
 
     .event-title {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
         margin-bottom: 1.5rem;
     }
 
@@ -1637,7 +1637,10 @@ body {
         font-size: 0.9rem;
     }
 
-    .event-title,
+    .event-title {
+        font-size: 1.2rem;
+    }
+
     .event-time {
         font-size: 1rem;
     }
@@ -1877,7 +1880,7 @@ body {
     }
 
     .event-title {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         margin-bottom: 0.6rem;
     }
 
